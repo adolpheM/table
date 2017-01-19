@@ -1,0 +1,18 @@
+<table>
+  
+  <tr>
+    <td>Day</td>
+    <td>Venue</td>
+    <td>Description</td>
+    <td>Duration</td>
+  </tr>
+  <% @weekly_agenda.each do |agenda|%>
+    <tr>
+        <td><% agenda.day %></td>
+        <td><%= agenda.venue %></td>
+        <td><%= agenda.description %></td>
+        <td><%= agenda.duration %></td>
+    </tr>
+  <% end %>
+
+</table>
