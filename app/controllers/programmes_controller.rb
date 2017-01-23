@@ -1,13 +1,26 @@
 class ProgrammesController < ApplicationController
 
-  def first_day_agenda
-    @first_day_agenda = Programme.first
-    render "the_first_day_agenda.html.erb"
+  def index
+    @programmes = Programme.all
+    
+  end 
+
+  def show
+    @programme = Programme.find_by(id: params[:id])
+    
   end
 
-  def weekly_agenda
-    @weekly_agenda = Programme.all
-    render "the_weekly_agenda.html.erb"
+  def new
+  end 
+
+  def create
+    day = params[:day]
+    venue = params[:venue]
+    description = params[:description]
+    duration = params[:duration]
+
+    programme = Programme.new({day: day, venue: venue, description: description, duration: duration})
+    programme.save 
   end 
 
 end

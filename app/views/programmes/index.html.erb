@@ -1,0 +1,18 @@
+<table>
+  
+  <tr>
+    <td>Day</td>
+    <td>Venue</td>
+    <td>Description</td>
+    <td>Duration</td>
+  </tr>
+  <% @programmes.each do |programme|%>
+    <tr>
+        <td><a href="/programmes/<%= programme.id%>"><%= programme.day %></td>
+        <td><%= programme.venue %></td>
+        <td><%= programme.description %></td>
+        <td><%= programme.duration %></td>
+    </tr>
+  <% end %>
+
+</table>
