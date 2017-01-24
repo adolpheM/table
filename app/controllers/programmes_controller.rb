@@ -23,4 +23,24 @@ class ProgrammesController < ApplicationController
     programme.save 
   end 
 
-end
+  def edit
+    @programme = Programme.find_by(id: params[:id])
+  end 
+
+  def update
+    @programme = Programme.find_by(id: params[:id])
+
+    @programme.day = params[:day]
+    @programme.venue = params[:venue]
+    @programme.description = params[:description]
+    @programme.duration = params[:duration]
+    @programme.save
+
+  end 
+
+  def destroy
+    @programme = Programme.find_by(id: params[:id])
+    @programme.destroy 
+  end 
+
+end 

@@ -1,0 +1,20 @@
+<h1>Programme </h1>
+
+<%= form_tag "/programmes/#{@programme.id}", method: :patch do %>
+<div>
+  Day: <input type="name" name="day" value="<%= @programme.day%>">
+</div>
+<div>
+  Venue: <input type="name" name="venue" value="<%= @programme.venue%>">
+</div>
+<div>
+  Description: <input type="name" name="description" value="<%= @programme.description%>">
+</div>
+<div>
+  Duration: <input type="name" name="duration" value="<%= @programme.duration%>">
+</div>
+
+<div>
+  <input type="submit" value="Update Programme ">
+</div>
+<% end %>
